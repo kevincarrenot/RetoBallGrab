@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Movimiento : MonoBehaviour
 {
     public float speed;
     Rigidbody2D rb;
-   
+    Vector3 posicionInicial;
+
 
     void Start()
     {
+        posicionInicial = transform.position;
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void Reset()
+    {
+        transform.position = posicionInicial;
     }
 
     void Update()

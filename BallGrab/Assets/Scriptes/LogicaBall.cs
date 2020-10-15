@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class LogicaBall : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private bool gameOver;
+    private Rigidbody2D rb2d;
+    private void Awake()
+    {
+        rb2d = GetComponent<Rigidbody2D>();
+    }
+
     void Start()
     {
         
@@ -14,5 +20,10 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        gameOver = true;
+        Debug.Log("perdewr");
     }
 }
