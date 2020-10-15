@@ -12,6 +12,6 @@ public class PisoPerder : MonoBehaviour
     private bool gameOver;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        vidas.PerderVida();        
+        vidas.PerderVida();
     }
 }

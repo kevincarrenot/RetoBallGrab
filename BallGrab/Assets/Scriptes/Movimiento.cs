@@ -8,7 +8,7 @@ public class Movimiento : MonoBehaviour
     public float speed;
     Rigidbody2D rb;
     Vector3 posicionInicial;
-
+    public GameObject balones;
 
     void Start()
     {
@@ -24,5 +24,10 @@ public class Movimiento : MonoBehaviour
     void Update()
     {
        rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed,0);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
     }
 }

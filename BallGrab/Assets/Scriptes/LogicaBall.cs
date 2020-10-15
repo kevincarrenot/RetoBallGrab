@@ -1,29 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class LogicaBall : MonoBehaviour
 {
-    private bool gameOver;
-    private Rigidbody2D rb2d;
-    private void Awake()
-    {
-        rb2d = GetComponent<Rigidbody2D>();
-    }
+    public Score puntos;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
     void OnCollisionEnter2D(Collision2D collision)
     {
-        gameOver = true;
-        Debug.Log("perdewr");
+        Destroy(gameObject);
+        puntos.GanarPunto();
     }
 }
