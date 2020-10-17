@@ -2,48 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PullBall : MonoBehaviour
+public class pullBall : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public int ballPooll = 5;
-    public float posicionY = 6f;
-    private int currentBall;
-
-    public GameObject balonSoccer;
-    private Vector2 objectPoolPosition = new Vector2(0, 7);
-
-    private GameObject[] balones;
+    public GameObject balon;
     private float tiempoDeObjetos;
     public float spawnRate = 3;
-    public float ballMin = -6f;
-    public float ballMax = 7f;
-    // Start is called before the first frame update
-    void Start()
+    
+    
+    public void Update()
     {
-        balones = new GameObject[ballPooll];
-        for (int i = 0; i < ballPooll; i++)
-        {
-            balones[i] = Instantiate(balonSoccer, objectPoolPosition, Quaternion.identity);
-        }
-
+        GenerarPull();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GenerarPull()
     {
         tiempoDeObjetos += Time.deltaTime;
-        if (!gestorDelJuego.instance.gameOver && tiempoDeObjetos >= spawnRate)
+        if (tiempoDeObjetos >= spawnRate)
         {
             tiempoDeObjetos = 0;
-            float posX = Random.Range(ballMin, ballMax);
-            balones[currentBall].transform.position = new Vector3(posX, posicionY);
-            currentBall++;
-            if (currentBall >= ballPooll)
-            {
-                currentBall = 0;
-            }
-            // Y 3 Y -1
-            // X
+            float posX = Random.Range(-5f, 7f);
+            Instantiate(balon, new Vector3(posX, 8, 0), Quaternion.identity);
+
         }
     }
+
+    
+
+
+
 }
+

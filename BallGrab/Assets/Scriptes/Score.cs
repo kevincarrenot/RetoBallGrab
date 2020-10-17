@@ -6,6 +6,7 @@ public class Score : MonoBehaviour
 {
     public static int puntaje =0;
     public Text textoScore;
+
     void Start()
     {
         ActualizarScore();
@@ -21,5 +22,8 @@ public class Score : MonoBehaviour
     {
         Score.puntaje++;
         ActualizarScore();
+         
     }
+
+    
 }

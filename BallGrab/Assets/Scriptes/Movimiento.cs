@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class Movimiento : MonoBehaviour
 {
-    public float speed;
-    Rigidbody2D rb;
+    //float posX = Random.Range(-5f, 7f);
     Vector3 posicionInicial;
-    public GameObject balones;
+    Rigidbody2D rb;
+    public float speed;
+    public Score puntos;
+    //public GameObject balonM;
 
     void Start()
     {
@@ -28,6 +30,10 @@ public class Movimiento : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-
+        
+         puntos.GanarPunto();
+            
+    
     }
+
 }
