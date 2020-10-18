@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Movimiento : MonoBehaviour
 {
-    //float posX = Random.Range(-5f, 7f);
+    
     Vector3 posicionInicial;
     Rigidbody2D rb;
     public float speed;
@@ -31,6 +31,7 @@ public class Movimiento : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        collision.gameObject.transform.position = new Vector3(Random.Range(-5f, 7f), 8, 0);
         sonido.AudioScore();
         puntos.GanarPunto();
             
