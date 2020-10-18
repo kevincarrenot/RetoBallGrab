@@ -12,6 +12,7 @@ public class pullBall : MonoBehaviour
     public void Update()
     {
         GenerarPull();
+        
     }
 
     public void GenerarPull()
@@ -19,9 +20,10 @@ public class pullBall : MonoBehaviour
         tiempoDeObjetos += Time.deltaTime;
         if (tiempoDeObjetos >= spawnRate)
         {
+           
             tiempoDeObjetos = 0;
-            float posX = Random.Range(-5f, 7f);
-            Instantiate(balon, new Vector3(posX, 8, 0), Quaternion.identity);
+            float posX = Random.Range(-4f, 4f);
+            Instantiate(balon, new Vector3(posX, 15, 0), Quaternion.identity);
 
         }
     }

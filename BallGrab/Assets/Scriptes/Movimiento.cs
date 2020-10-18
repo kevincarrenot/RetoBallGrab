@@ -10,6 +10,7 @@ public class Movimiento : MonoBehaviour
     Rigidbody2D rb;
     public float speed;
     public Score puntos;
+    public SoundSystem sonido;
     //public GameObject balonM;
 
     void Start()
@@ -30,10 +31,10 @@ public class Movimiento : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
-         puntos.GanarPunto();
+        sonido.AudioScore();
+        puntos.GanarPunto();
             
-    
+
     }
 
 }
